@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Clear Creek Volunteer Fire Department, its mission, service area, stations, funding, and volunteer response model.">
+  <title>About | Clear Creek Volunteer Fire Department</title>
+
+<style>
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+:root {
+  --ccvfd-red: #a80f18;
+  --ccvfd-red-dark: #6f090f;
+  --ccvfd-black: #171717;
+  --ccvfd-blue: #1f5b8f;
+  --text: #222;
+  --muted: #667085;
+  --border: #dee2e6;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--text);
+  background: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+}
+img, iframe { max-width: 100%; }
+a { color: #0b5ed7; text-underline-offset: .15em; }
+h1, h2, h3, h4, h5 { margin-top: 0; line-height: 1.2; }
+p { margin-top: 0; margin-bottom: 1rem; }
+hr { border: 0; border-top: 1px solid rgba(0,0,0,.14); margin: 1.5rem 0; }
+ul, ol { margin-top: 0; margin-bottom: 1rem; }
+
+.container {
+  width: min(100% - 2rem, 1140px);
+  margin-inline: auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: -.75rem;
+}
+.row > * {
+  width: 100%;
+  padding-inline: .75rem;
+}
+.g-3 { row-gap: 1rem; }
+.g-4 { row-gap: 1.5rem; }
+
+@media (min-width: 768px) {
+  .col-md-6 { width: 50%; }
+}
+@media (min-width: 992px) {
+  .col-lg-4 { width: 33.333333%; }
+  .col-lg-5 { width: 41.666667%; }
+  .col-lg-6 { width: 50%; }
+  .col-lg-7 { width: 58.333333%; }
+  .col-lg-8 { width: 66.666667%; }
+  .p-lg-5 { padding: 3rem !important; }
+}
+@media (min-width: 1200px) {
+  .col-xl-3 { width: 25%; }
+}
+
+.d-flex { display: flex !important; }
+.d-grid { display: grid !important; }
+.flex-wrap { flex-wrap: wrap !important; }
+.justify-content-center { justify-content: center !important; }
+.align-items-center { align-items: center !important; }
+.align-items-start { align-items: flex-start !important; }
+.gap-2 { gap: .5rem !important; }
+.ms-auto { margin-left: auto !important; }
+.mx-auto { margin-inline: auto !important; }
+.w-100 { width: 100% !important; }
+.h-100 { height: 100% !important; }
+.overflow-hidden { overflow: hidden !important; }
+.text-center { text-align: center !important; }
+.fw-bold { font-weight: 700 !important; }
+.small { font-size: .875rem !important; }
+.lead { font-size: 1.2rem; font-weight: 400; }
+
+.display-4 { font-size: clamp(2.35rem, 5vw, 3.5rem); }
+.display-5 { font-size: clamp(2rem, 4vw, 3rem); }
+.h2 { font-size: 2rem; }
+.h3 { font-size: 1.75rem; }
+.h4 { font-size: 1.5rem; }
+.h5 { font-size: 1.25rem; }
+
+.p-4 { padding: 1.5rem !important; }
+.py-2 { padding-block: .5rem !important; }
+.py-4 { padding-block: 1.5rem !important; }
+.py-5 { padding-block: 3rem !important; }
+.mb-0 { margin-bottom: 0 !important; }
+.mb-1 { margin-bottom: .25rem !important; }
+.mb-2 { margin-bottom: .5rem !important; }
+.mb-3 { margin-bottom: 1rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mb-5 { margin-bottom: 3rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mt-4 { margin-top: 1.5rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+.my-4 { margin-block: 1.5rem !important; }
+
+.bg-light { background: #f8f9fa !important; }
+.rounded { border-radius: .6rem !important; }
+.border { border: 1px solid var(--border) !important; }
+.border-2 { border-width: 2px !important; }
+.shadow-sm { box-shadow: 0 .125rem .45rem rgba(0,0,0,.08) !important; }
+
+.site-alert,
+.alert {
+  position: relative;
+  padding: .9rem 1rem;
+  border: 1px solid transparent;
+  border-radius: .55rem;
+  margin-bottom: 1rem;
+}
+.site-alert {
+  margin: 0;
+  border-radius: 0;
+  background: #fff3cd;
+  color: #4e3b00;
+  border-color: #ffecb5;
+}
+.alert-warning {
+  background: #fff3cd;
+  color: #664d03;
+  border-color: #ffecb5;
+}
+.alert-danger {
+  background: #f8d7da;
+  color: #842029;
+  border-color: #f5c2c7;
+}
+
+.section-title {
+  color: var(--ccvfd-red);
+  font-weight: 800;
+}
+.news-meta {
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .78rem;
+  font-weight: 800;
+  color: var(--ccvfd-red);
+}
+.small-note {
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.card,
+.content-panel,
+.faq-panel {
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: .85rem;
+}
+.card-body { padding: 1.5rem; }
+.card-accent,
+.content-panel {
+  border-top: 5px solid var(--ccvfd-red);
+  box-shadow: 0 .3rem 1.1rem rgba(0,0,0,.08);
+}
+.card-accent-blue,
+.membership-intro,
+.volunteer-panel { border-top-color: var(--ccvfd-blue); }
+.content-panel { padding: 1.6rem; }
+.content-panel > :last-child,
+.card-body > :last-child { margin-bottom: 0; }
+
+.callout {
+  border-left: 5px solid var(--ccvfd-red);
+  background: #fafafa;
+  padding: 1rem 1.2rem;
+}
+.archive {
+  background: #f8f9fa;
+  border: 1px solid #eceff2;
+}
+.list-check li,
+.membership-cost-list li { margin-bottom: .45rem; }
+
+.hero {
+  background:
+    linear-gradient(115deg, rgba(23,23,23,.97), rgba(111,9,15,.92)),
+    radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 36%);
+  color: #fff;
+}
+.hero-kicker {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .82rem;
+  font-weight: 800;
+  color: #ffd5d7;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  padding: .45rem .9rem;
+  border: 1px solid transparent;
+  border-radius: .5rem;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+.btn-lg { padding: .65rem 1.1rem; font-size: 1.08rem; }
+.btn-ccvfd {
+  color: #fff;
+  background: var(--ccvfd-red);
+  border-color: var(--ccvfd-red);
+}
+.btn-ccvfd:hover { background: var(--ccvfd-red-dark); border-color: var(--ccvfd-red-dark); }
+.btn-outline-ccvfd {
+  color: var(--ccvfd-red);
+  border-color: var(--ccvfd-red);
+  background: transparent;
+}
+.btn-outline-ccvfd:hover { color: #fff; background: var(--ccvfd-red); }
+.btn-outline-secondary {
+  color: #5c636a;
+  border-color: #6c757d;
+  background: transparent;
+}
+.btn-outline-secondary:hover { color: #fff; background: #6c757d; }
+.btn-light { color: #111; background: #f8f9fa; border-color: #f8f9fa; }
+.btn-outline-light { color: #fff; border-color: #fff; background: transparent; }
+.btn-outline-light:hover { color: #111; background: #fff; }
+
+.footer {
+  background: var(--ccvfd-black);
+  color: rgba(255,255,255,.78);
+}
+.footer a,
+.footer strong { color: #fff; }
+.border-secondary { border-color: #6c757d !important; }
+
+.calendar-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 70%;
+  min-height: 520px;
+}
+.calendar-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.form-frame,
+.volunteer-form {
+  width: 100%;
+  min-height: 600px;
+  border: 0;
+  border-radius: .65rem;
+  background: #fff;
+}
+
+/* Accordion */
+.accordion {
+  border: 1px solid #e2e5e9;
+  border-radius: .65rem;
+  overflow: hidden;
+}
+.accordion-item + .accordion-item { border-top: 1px solid #e2e5e9; }
+.accordion-header { margin: 0; }
+.accordion-button {
+  width: 100%;
+  border: 0;
+  background: #fff;
+  color: #262626;
+  padding: 1rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+.accordion-button::after {
+  content: "+";
+  float: right;
+  color: var(--ccvfd-red);
+  font-size: 1.2rem;
+}
+.accordion-button[aria-expanded="true"] {
+  color: var(--ccvfd-red-dark);
+  background: #fff1f2;
+}
+.accordion-button[aria-expanded="true"]::after { content: "−"; }
+.accordion-collapse { display: none; }
+.accordion-collapse.show { display: block; }
+.accordion-body { padding: 1rem 1.1rem; background: #fff; }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  overflow: auto;
+  background: rgba(0,0,0,.55);
+  padding: 1rem;
+}
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-dialog { width: min(100%, 760px); margin: auto; }
+.modal-content {
+  background: #fff;
+  border-radius: .8rem;
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.25);
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e6e8eb;
+}
+.modal-body { padding: 1.25rem; }
+.btn-close {
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+.btn-close::before,
+.btn-close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.15rem;
+  height: 2px;
+  background: #333;
+}
+.btn-close::before { transform: translate(-50%,-50%) rotate(45deg); }
+.btn-close::after { transform: translate(-50%,-50%) rotate(-45deg); }
+body.modal-open { overflow: hidden; }
+
+@media (max-width: 767.98px) {
+  .calendar-container { padding-top: 110%; min-height: 560px; }
+  .content-panel, .faq-panel { padding: 1.25rem; }
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="alert site-alert text-center py-2" role="alert">
+  <strong>Fall fire-safety reminder:</strong> Boise County's county closed season remains in effect through October 20. State/federal Stage 1 restrictions in the Boise Fire Restriction Area were lifted September 3, but the county seasonal ban remains a separate requirement.
+</div>
+<main class="container py-5">
+  <header class="mb-5">
+    <h1 class="section-title display-5 mb-3">
+        About Us
+      </h2>
+      <p>
+        <b>Clear Creek Volunteer Fire Department (CCVFD)</b> is a 501(C)(3)
+        non-profit fire service organization that provides fire protection and
+        community assistance for the Clear Creek, Grimes Creek, Pine Creek, and
+        Mack's Creek areas in Boise County, Idaho. <br /><br />
+
+        CCVFD is staffed by unpaid volunteers in the community and receives no
+        tax funding. Funding is sourced through a subscription program,
+        donations from the community, and the occasional grant from various
+        organizations and agencies for certain equipment. <br /><br />
+
+        CCVFD volunteers train monthly and participate in county and interagency
+        training programs.<br /><br />
+      </p>
+      <hr />
+  </header>
+
+  <section class="mb-5">
+    <div class="row g-4">
+        <div class="col-lg-6">
+          <article class="content-panel h-100">
+            <h2 class="h4 section-title">Mission & Values</h2>
+      <p>
+        Our mission is to protect life, property, and the environment through
+        dedication, professionalism, and partnerships with the community. We
+        value integrity, compassion, and excellence.
+      </p>
+      <hr />
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="content-panel h-100">
+            <h2 class="h4 section-title">Who Are We?</h2>
+      <p>We're your neighbors.</p>
+      <p>
+        Clear Creek Volunteer Fire Department was founded in 1976 as Clear Creek
+        Area Patrol. Being in a remote mountain community, the volunteer
+        founders decided that "someone needs to do it". Today, when the pager
+        goes off at 2:00 A.M., we're at home, in bed, and jumping up to run
+        towards the danger that everyone should be running away from.
+      </p>
+      <p>
+        There's an expectation that public safety "just happens" when you dial
+        9-1-1. In this remote area, it doesn't happen without your neighbors.
+        We're happy to do it. We just cannot do it without your support.
+      </p>
+      <hr />
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="content-panel h-100">
+            <h2 class="h4 section-title">What Do We Do?</h2>
+      <p>Our primary objective: To protect life and property.</p>
+      <p>
+        Structural firefighting, wildland firefighting, rescue, air ambulance
+        landing zones, EMS address assist, traffic control, and mutual aid are
+        just some of the activities for which our first responders are
+        responsible. We train regularly to become proficient in carrying out our
+        duties on an incident.
+      </p>
+      <p>
+        When lightning strikes a tree out in the forest, government firefighting
+        agencies are coming. However, this is our backyard, and we'll be
+        on-scene in minutes when the professionals are an hour away or more.
+      </p>
+      <hr />
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="content-panel h-100">
+            <h2 class="h4 section-title">Where Are We?</h2>
+      <p>
+        Our protection area includes areas of Grimes Creek, Clear Creek, Pine
+        Creek, and Mack's Creek.
+      </p>
+      <p>
+        We also provide mutual aid for our partner departments on this side of
+        the county, who serve communities just like ours.
+      </p>
+      <hr />
+          </article>
+        </div>
+      </div>
+  </section>
+
+  <section>
+    <div class="faq-panel">
+        <h2 class="h3 section-title mb-4">Frequently Asked Questions</h2>
+      <div class="accordion ccvfd-accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq1"
+            >
+              I'd like to volunteer - what do I need to do?
+            </button>
+          </h2>
+          <div
+            id="faq1"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              We are always looking for volunteers to help out. Not all
+              volunteers have to be firefighters. If you have a special skill
+              that you think we can use, please contact us. Are you good at
+              fund-raising, grant-writing, vehicle or small-engine mechanics,
+              public engagement, or construction/handyman work? This is all done
+              by firefighters, in addition to training, incident response, and
+              their daily lives. Check the event calendar, and come introduce
+              yourself at one of our monthly board meetings. They're not as
+              boring as it sounds, and the community is more than encouraged to
+              attend. We really do care about your input! You can also go to our
+              Contact page and fill out a volunteer questionnaire.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq2"
+            >
+              Where is the closest fire station located?
+            </button>
+          </h2>
+          <div
+            id="faq2"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              We have two locations. Our main fire station is Station 1, which
+              is located at 212 Clear Creek Road, about a mile past where the
+              pavement ends. Station 2 is located in the Forest Highlands
+              subdivision at 9 Highland Drive. Please note that the fire
+              stations are not staffed. The volunteers respond from their homes,
+              and proceed to the nearest appropriate fire station to activate
+              the apparatus.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq3"
+            >
+              Why would you ever show up to a fire without a fire truck?
+            </button>
+          </h2>
+          <div
+            id="faq3"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              That sounds ridiculous, doesn't it? Sometimes, your neighbor
+              that's a firefighter is closer to you than to a fire station.
+              Believe me, someone is on their way to go get a fire truck when
+              it's needed. The advantage to getting a firefighter on-scene
+              without a truck, is that firefighter becomes the eyes and ears
+              with a two-way radio for the rest of the responders that are on
+              their way. This responder can then provide valuable information,
+              such as best access route, hazards along the way, road conditions,
+              and what additional resources are needed.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq4"
+            >
+              How do I report a fire? Does 9-1-1 work in the mountains?
+            </button>
+          </h2>
+          <div
+            id="faq4"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Yes, dial 9-1-1 for any emergency! Your landline will ring to
+              Boise County Dispatch. If you are on wifi calling on your cell
+              phone, make sure your E-911 service is mapped correctly. You may
+              still want to explain to dispatch that you are in the Clear Creek
+              area of Boise County in case you have been routed to another
+              dispatch center. Any location information that you can provide
+              dispatch will be helpful, and get responders to you faster.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq5"
+            >
+              What kind of donated items could the fire department use?
+            </button>
+          </h2>
+          <div
+            id="faq5"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              We go through cases of bottled water and Gatorade on fires,
+              training, and other incidents, so that's always a hit.
+              Raffle/auction items for our annual community gatherings are
+              appreciated. Envelopes and paper for mailers (and humans to stuff
+              them!) are useful too.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq6"
+            >
+              Are my donations tax-deductible?
+            </button>
+          </h2>
+          <div
+            id="faq6"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Yes. We are a 503(c)(3) non-profit charitable organization.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq7"
+            >
+              If I don't pay my subscription, does that mean you won't respond?
+            </button>
+          </h2>
+          <div
+            id="faq7"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              No. We do this as a community service. When we respond to an
+              incident, we don't even know who has paid and who hasn't. If you
+              don't pay the subscription, the only thing that means is that we
+              can bill you and/or your insurance company in accordance with
+              Idaho state law.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq8"
+            >
+              Do you have any paid fire fighters?
+            </button>
+          </h2>
+          <div
+            id="faq8"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              No. Not a single one of our volunteers, including the chief, are
+              paid for our services. Many of us have full-time jobs, in addition
+              to training and responding. We each may get a free t-shirt every
+              year or two though.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq9"
+            >
+              Don't some of my property taxes go toward the fire department?
+            </button>
+          </h2>
+          <div
+            id="faq9"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              No. We are not a taxing district. This has been attempted in the
+              past, but the community turned it down. There are advantages and
+              disadvantages to being a taxing district, but that's for another
+              forum.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq10"
+            >
+              Why isn't there a fundraiser anymore?
+            </button>
+          </h2>
+          <div
+            id="faq10"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Mostly, due to the lack of a good accessible location in the
+              community to hold a mass-gathering. With rising costs, the amount
+              brought in wasn't sufficient to pay the bills the last few years.
+              Also, most of the planning and work was done by the firefighters
+              and their families themselves, in addition to their full-time
+              jobs, and training, and chores, and other things.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq11"
+            >
+              How is the subscription participation? Is it enough?
+            </button>
+          </h2>
+          <div
+            id="faq11"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Participation varies from year-to-year, but it's been running just
+              under 33%. In the past, it had been paying the bills and providing
+              for some advancements here-and-there, but costs are increasing.
+              Add to that an unexpected truck repair or two, and we're
+              over-budget and are cutting into some essentials. We could use
+              your help in encouraging your neighbors to participate in this
+              highly beneficial program.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq12"
+            >
+              Where does the money go?
+            </button>
+          </h2>
+          <div
+            id="faq12"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Funding goes to utilities, insurance, training, vehicle/equipment
+              repairs and maintenance, fuel, building repairs and maintenance,
+              personal protective equipment (PPE), communications equipment, and
+              more. Believe it or not, we actually try to spend as little as we
+              can, and sometimes even buy parts and materials out of our own
+              pockets. We do much of the vehicle repairs ourselves, and we have
+              even had neighbors that are gracious enough to help us out with
+              some of the more complex repairs. The best way to get a good idea
+              of how much is spent and where is to attend a monthly board
+              meeting.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faq13"
+            >
+              I want to help out. What is the best way to plug-in?
+            </button>
+          </h2>
+          <div
+            id="faq13"
+            class="accordion-collapse collapse"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              We'd love your help! The best way to plug-in is to show up to the
+              monthly board meetings. (they aren't as boring as they sound!) We
+              cover all of the things going on with the department: equipment
+              and personnel status, upcoming events, needs and wants, future
+              planning, and more. You also contact us
+              <a href="contact.html">HERE</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </section>
+</main>
+
+<footer class="footer mt-5 py-4">
+  <div class="container">
+    <div class="row g-3 align-items-start">
+      <div class="col-lg-8">
+        <strong>Clear Creek Volunteer Fire Department</strong><br>
+        Serving Clear Creek, Grimes Creek, Pine Creek, Mack's Creek, and surrounding Boise County mountain communities.
+      </div>
+      <div class="col-lg-4">
+        <strong>Emergency: Dial 9-1-1</strong><br>
+        Duty phone: <a href="tel:2087605827">208-760-5827</a><br>
+        Email: <a href="mailto:info@clearcreekvfd.com">info@clearcreekvfd.com</a>
+      </div>
+    </div>
+    <hr class="border-secondary">
+    <p class="small mb-0">&copy; <span data-current-year></span> Clear Creek Volunteer Fire Department. Community information is provided as a public service; emergency instructions from responding agencies always take priority.</p>
+  </div>
+</footer>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("[data-current-year]").forEach(function (el) {
+    el.textContent = new Date().getFullYear();
+  });
+
+  document.querySelectorAll(".accordion-button").forEach(function (button) {
+    var targetSelector = button.getAttribute("data-bs-target");
+    if (!targetSelector) return;
+    var target = document.querySelector(targetSelector);
+    if (!target) return;
+
+    button.setAttribute("aria-expanded", target.classList.contains("show") ? "true" : "false");
+
+    button.addEventListener("click", function () {
+      var parentSelector = target.getAttribute("data-bs-parent");
+      if (parentSelector) {
+        var parent = document.querySelector(parentSelector);
+        if (parent) {
+          parent.querySelectorAll(".accordion-collapse.show").forEach(function (openPanel) {
+            if (openPanel !== target) {
+              openPanel.classList.remove("show");
+              var id = openPanel.getAttribute("id");
+              var opener = parent.querySelector('.accordion-button[data-bs-target="#' + id + '"]');
+              if (opener) opener.setAttribute("aria-expanded", "false");
+            }
+          });
+        }
+      }
+
+      var willOpen = !target.classList.contains("show");
+      target.classList.toggle("show", willOpen);
+      button.setAttribute("aria-expanded", willOpen ? "true" : "false");
+    });
+  });
+
+  function openModal(modal) {
+    if (!modal) return;
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+  }
+
+  document.querySelectorAll('[data-bs-toggle="modal"]').forEach(function (trigger) {
+    trigger.addEventListener("click", function () {
+      var selector = trigger.getAttribute("data-bs-target");
+      openModal(document.querySelector(selector));
+    });
+  });
+
+  document.querySelectorAll(".modal").forEach(function (modal) {
+    modal.setAttribute("aria-hidden", "true");
+
+    modal.querySelectorAll('[data-bs-dismiss="modal"]').forEach(function (closeButton) {
+      closeButton.addEventListener("click", function () {
+        closeModal(modal);
+      });
+    });
+
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) closeModal(modal);
+    });
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      document.querySelectorAll(".modal.show").forEach(closeModal);
+    }
+  });
+});
+
+</script>
+</body>
+</html>

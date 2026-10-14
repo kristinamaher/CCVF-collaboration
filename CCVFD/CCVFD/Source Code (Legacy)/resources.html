@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clear Creek Volunteer Fire Department burn rules, wildfire preparedness, evacuation, and public safety resources.">
+  <title>Resources | Clear Creek Volunteer Fire Department</title>
+
+<style>
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+:root {
+  --ccvfd-red: #a80f18;
+  --ccvfd-red-dark: #6f090f;
+  --ccvfd-black: #171717;
+  --ccvfd-blue: #1f5b8f;
+  --text: #222;
+  --muted: #667085;
+  --border: #dee2e6;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--text);
+  background: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+}
+img, iframe { max-width: 100%; }
+a { color: #0b5ed7; text-underline-offset: .15em; }
+h1, h2, h3, h4, h5 { margin-top: 0; line-height: 1.2; }
+p { margin-top: 0; margin-bottom: 1rem; }
+hr { border: 0; border-top: 1px solid rgba(0,0,0,.14); margin: 1.5rem 0; }
+ul, ol { margin-top: 0; margin-bottom: 1rem; }
+
+.container {
+  width: min(100% - 2rem, 1140px);
+  margin-inline: auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: -.75rem;
+}
+.row > * {
+  width: 100%;
+  padding-inline: .75rem;
+}
+.g-3 { row-gap: 1rem; }
+.g-4 { row-gap: 1.5rem; }
+
+@media (min-width: 768px) {
+  .col-md-6 { width: 50%; }
+}
+@media (min-width: 992px) {
+  .col-lg-4 { width: 33.333333%; }
+  .col-lg-5 { width: 41.666667%; }
+  .col-lg-6 { width: 50%; }
+  .col-lg-7 { width: 58.333333%; }
+  .col-lg-8 { width: 66.666667%; }
+  .p-lg-5 { padding: 3rem !important; }
+}
+@media (min-width: 1200px) {
+  .col-xl-3 { width: 25%; }
+}
+
+.d-flex { display: flex !important; }
+.d-grid { display: grid !important; }
+.flex-wrap { flex-wrap: wrap !important; }
+.justify-content-center { justify-content: center !important; }
+.align-items-center { align-items: center !important; }
+.align-items-start { align-items: flex-start !important; }
+.gap-2 { gap: .5rem !important; }
+.ms-auto { margin-left: auto !important; }
+.mx-auto { margin-inline: auto !important; }
+.w-100 { width: 100% !important; }
+.h-100 { height: 100% !important; }
+.overflow-hidden { overflow: hidden !important; }
+.text-center { text-align: center !important; }
+.fw-bold { font-weight: 700 !important; }
+.small { font-size: .875rem !important; }
+.lead { font-size: 1.2rem; font-weight: 400; }
+
+.display-4 { font-size: clamp(2.35rem, 5vw, 3.5rem); }
+.display-5 { font-size: clamp(2rem, 4vw, 3rem); }
+.h2 { font-size: 2rem; }
+.h3 { font-size: 1.75rem; }
+.h4 { font-size: 1.5rem; }
+.h5 { font-size: 1.25rem; }
+
+.p-4 { padding: 1.5rem !important; }
+.py-2 { padding-block: .5rem !important; }
+.py-4 { padding-block: 1.5rem !important; }
+.py-5 { padding-block: 3rem !important; }
+.mb-0 { margin-bottom: 0 !important; }
+.mb-1 { margin-bottom: .25rem !important; }
+.mb-2 { margin-bottom: .5rem !important; }
+.mb-3 { margin-bottom: 1rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mb-5 { margin-bottom: 3rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mt-4 { margin-top: 1.5rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+.my-4 { margin-block: 1.5rem !important; }
+
+.bg-light { background: #f8f9fa !important; }
+.rounded { border-radius: .6rem !important; }
+.border { border: 1px solid var(--border) !important; }
+.border-2 { border-width: 2px !important; }
+.shadow-sm { box-shadow: 0 .125rem .45rem rgba(0,0,0,.08) !important; }
+
+.site-alert,
+.alert {
+  position: relative;
+  padding: .9rem 1rem;
+  border: 1px solid transparent;
+  border-radius: .55rem;
+  margin-bottom: 1rem;
+}
+.site-alert {
+  margin: 0;
+  border-radius: 0;
+  background: #fff3cd;
+  color: #4e3b00;
+  border-color: #ffecb5;
+}
+.alert-warning {
+  background: #fff3cd;
+  color: #664d03;
+  border-color: #ffecb5;
+}
+.alert-danger {
+  background: #f8d7da;
+  color: #842029;
+  border-color: #f5c2c7;
+}
+
+.section-title {
+  color: var(--ccvfd-red);
+  font-weight: 800;
+}
+.news-meta {
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .78rem;
+  font-weight: 800;
+  color: var(--ccvfd-red);
+}
+.small-note {
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.card,
+.content-panel,
+.faq-panel {
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: .85rem;
+}
+.card-body { padding: 1.5rem; }
+.card-accent,
+.content-panel {
+  border-top: 5px solid var(--ccvfd-red);
+  box-shadow: 0 .3rem 1.1rem rgba(0,0,0,.08);
+}
+.card-accent-blue,
+.membership-intro,
+.volunteer-panel { border-top-color: var(--ccvfd-blue); }
+.content-panel { padding: 1.6rem; }
+.content-panel > :last-child,
+.card-body > :last-child { margin-bottom: 0; }
+
+.callout {
+  border-left: 5px solid var(--ccvfd-red);
+  background: #fafafa;
+  padding: 1rem 1.2rem;
+}
+.archive {
+  background: #f8f9fa;
+  border: 1px solid #eceff2;
+}
+.list-check li,
+.membership-cost-list li { margin-bottom: .45rem; }
+
+.hero {
+  background:
+    linear-gradient(115deg, rgba(23,23,23,.97), rgba(111,9,15,.92)),
+    radial-gradient(circle at top right, rgba(255,255,255,.18), transparent 36%);
+  color: #fff;
+}
+.hero-kicker {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .82rem;
+  font-weight: 800;
+  color: #ffd5d7;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  padding: .45rem .9rem;
+  border: 1px solid transparent;
+  border-radius: .5rem;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+.btn-lg { padding: .65rem 1.1rem; font-size: 1.08rem; }
+.btn-ccvfd {
+  color: #fff;
+  background: var(--ccvfd-red);
+  border-color: var(--ccvfd-red);
+}
+.btn-ccvfd:hover { background: var(--ccvfd-red-dark); border-color: var(--ccvfd-red-dark); }
+.btn-outline-ccvfd {
+  color: var(--ccvfd-red);
+  border-color: var(--ccvfd-red);
+  background: transparent;
+}
+.btn-outline-ccvfd:hover { color: #fff; background: var(--ccvfd-red); }
+.btn-outline-secondary {
+  color: #5c636a;
+  border-color: #6c757d;
+  background: transparent;
+}
+.btn-outline-secondary:hover { color: #fff; background: #6c757d; }
+.btn-light { color: #111; background: #f8f9fa; border-color: #f8f9fa; }
+.btn-outline-light { color: #fff; border-color: #fff; background: transparent; }
+.btn-outline-light:hover { color: #111; background: #fff; }
+
+.footer {
+  background: var(--ccvfd-black);
+  color: rgba(255,255,255,.78);
+}
+.footer a,
+.footer strong { color: #fff; }
+.border-secondary { border-color: #6c757d !important; }
+
+.calendar-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 70%;
+  min-height: 520px;
+}
+.calendar-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.form-frame,
+.volunteer-form {
+  width: 100%;
+  min-height: 600px;
+  border: 0;
+  border-radius: .65rem;
+  background: #fff;
+}
+
+/* Accordion */
+.accordion {
+  border: 1px solid #e2e5e9;
+  border-radius: .65rem;
+  overflow: hidden;
+}
+.accordion-item + .accordion-item { border-top: 1px solid #e2e5e9; }
+.accordion-header { margin: 0; }
+.accordion-button {
+  width: 100%;
+  border: 0;
+  background: #fff;
+  color: #262626;
+  padding: 1rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+.accordion-button::after {
+  content: "+";
+  float: right;
+  color: var(--ccvfd-red);
+  font-size: 1.2rem;
+}
+.accordion-button[aria-expanded="true"] {
+  color: var(--ccvfd-red-dark);
+  background: #fff1f2;
+}
+.accordion-button[aria-expanded="true"]::after { content: "−"; }
+.accordion-collapse { display: none; }
+.accordion-collapse.show { display: block; }
+.accordion-body { padding: 1rem 1.1rem; background: #fff; }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  overflow: auto;
+  background: rgba(0,0,0,.55);
+  padding: 1rem;
+}
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-dialog { width: min(100%, 760px); margin: auto; }
+.modal-content {
+  background: #fff;
+  border-radius: .8rem;
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.25);
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e6e8eb;
+}
+.modal-body { padding: 1.25rem; }
+.btn-close {
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+.btn-close::before,
+.btn-close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.15rem;
+  height: 2px;
+  background: #333;
+}
+.btn-close::before { transform: translate(-50%,-50%) rotate(45deg); }
+.btn-close::after { transform: translate(-50%,-50%) rotate(-45deg); }
+body.modal-open { overflow: hidden; }
+
+@media (max-width: 767.98px) {
+  .calendar-container { padding-top: 110%; min-height: 560px; }
+  .content-panel, .faq-panel { padding: 1.25rem; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="alert site-alert text-center py-2" role="alert">
+  <strong>Fall fire-safety reminder:</strong> Boise County's county closed season remains in effect through October 20. State/federal Stage 1 restrictions in the Boise Fire Restriction Area were lifted September 3, but the county seasonal ban remains a separate requirement.
+</div>
+<main class="container py-5">
+  <header class="mb-5">
+    <h1 class="section-title display-5">Resources</h1>
+    <p class="lead">Burning rules, wildfire preparedness, evacuation information, public documents, and links to official agencies.</p>
+  </header>
+
+  <section class="mb-5">
+    <h2 class="h3">Fall 2026 Burning Rules</h2>
+    <div class="alert alert-warning mt-3">
+      <h3 class="h5">Current local seasonal rule</h3>
+      <p>
+        Boise County's county closed season runs <strong>July 1 through October 20</strong>, unless adjusted by the Board of County Commissioners. Idaho's burn-permit requirement for most burning outside city limits runs <strong>May 10 through October 20</strong>.
+      </p>
+      <p class="mb-0">
+        Stage 1 restrictions in the Boise Fire Restriction Area were lifted September 3, 2026. That did not cancel Boise County's separate seasonal ban.
+      </p>
+    </div>
+    <p>
+      After October 20, continue checking current conditions before burning. Air-quality rules, land-manager restrictions, emergency orders, wind, fuel moisture, and local requirements can still make burning unsafe or unlawful.
+    </p>
+    <div class="row g-3">
+      <div class="col-md-6 col-xl-3"><a class="btn btn-outline-ccvfd w-100 h-100" href="https://www.boisecounty.us/wp-content/uploads/2025/09/BC-Burnin-Ordinance-2025-06.pdf" target="_blank" rel="noopener noreferrer">Boise County Burning Ordinance 2025-06</a></div>
+      <div class="col-md-6 col-xl-3"><a class="btn btn-outline-ccvfd w-100 h-100" href="https://burnpermits.idaho.gov/" target="_blank" rel="noopener noreferrer">Idaho Burn Permits</a></div>
+      <div class="col-md-6 col-xl-3"><a class="btn btn-outline-ccvfd w-100 h-100" href="https://www.idl.idaho.gov/fire-management/fire-restrictions-finder/" target="_blank" rel="noopener noreferrer">IDL Fire Restrictions Finder</a></div>
+      <div class="col-md-6 col-xl-3"><a class="btn btn-outline-ccvfd w-100 h-100" href="https://www.deq.idaho.gov/air-quality/smoke-and-burning/can-i-burn/" target="_blank" rel="noopener noreferrer">Idaho DEQ “Can I Burn?”</a></div>
+    </div>
+  </section>
+
+  <section class="mb-5">
+    <h2 class="h3">Private-Land Wildfire Mitigation</h2>
+    <div class="card card-accent">
+      <div class="card-body p-4">
+        <h3 class="h5">Southwest Idaho All-Lands Partnership</h3>
+        <p>
+          The National Forest Foundation and partner agencies are working across the Boise and Payette National Forests and neighboring private lands to reduce wildfire risk and improve forest resilience. Clear Creek is one of the focal communities for this cross-boundary work.
+        </p>
+        <a class="btn btn-ccvfd" href="https://www.nationalforests.org/project/southwest-idaho-all-lands-partnership/" target="_blank" rel="noopener noreferrer">Learn About the Program</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-5">
+    <h2 class="h3">Wildfire &amp; Evacuation Preparedness</h2>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="h5">Around Your Home</h3>
+            <ul class="list-check mb-0">
+              <li>Remove needles, leaves, and other easily ignited debris from roofs, gutters, decks, and the first five feet around structures.</li>
+              <li>Separate firewood, propane tanks, dead vegetation, and other fuels from buildings whenever practical.</li>
+              <li>Keep reflective address numbers visible from the road.</li>
+              <li>Maintain driveways and turnarounds for engines and water tenders.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="h5">Before an Evacuation</h3>
+            <ul class="list-check mb-0">
+              <li>Register for Boise County emergency notifications.</li>
+              <li>Know your evacuation zone and at least two routes out.</li>
+              <li>Prepare medications, documents, chargers, clothing, pet supplies, and other essentials before an emergency.</li>
+              <li>Leave early when directed. Do not wait until fire is visible from your property.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap gap-2 mt-3">
+      <a class="btn btn-outline-secondary" href="https://www.boisecounty.us/services/emergency-management/" target="_blank" rel="noopener noreferrer">Boise County Emergency Management</a>
+      <a class="btn btn-outline-secondary" href="https://www.watchduty.org/" target="_blank" rel="noopener noreferrer">Watch Duty</a>
+      <a class="btn btn-outline-secondary" href="https://www.ready.gov/wildfires" target="_blank" rel="noopener noreferrer">Ready.gov Wildfires</a>
+    </div>
+  </section>
+
+  <section class="mb-5">
+    <h2 class="h3">Forms &amp; Public Documents</h2>
+    <p>Department forms, membership materials, public records, and safety resources are available through the department's shared document area.</p>
+    <div class="border border-2 rounded overflow-hidden">
+      <iframe
+        src="https://drive.google.com/embeddedfolderview?id=1nIb0QZLePtqtLZcgzzDGzU7GsB70doW5#list"
+        style="width:100%;height:22rem;border:0"
+        title="CCVFD Forms and Public Documents"></iframe>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="h3">Before Any Lawful Burn</h2>
+    <div class="callout">
+      <ol class="mb-0">
+        <li>Confirm county, state, federal, land-manager, and air-quality rules allow burning.</li>
+        <li>Obtain every required permit.</li>
+        <li>Check wind, humidity, forecast, and red-flag status immediately before ignition.</li>
+        <li>Have adequate water, hand tools, and responsible adult supervision on site.</li>
+        <li>Never leave a burn unattended; remain until the fire is cold.</li>
+        <li>Call 9-1-1 immediately if a fire escapes or conditions become unsafe.</li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+
+<footer class="footer mt-5 py-4">
+  <div class="container">
+    <div class="row g-3 align-items-start">
+      <div class="col-lg-8">
+        <strong>Clear Creek Volunteer Fire Department</strong><br>
+        Serving Clear Creek, Grimes Creek, Pine Creek, Mack's Creek, and surrounding Boise County mountain communities.
+      </div>
+      <div class="col-lg-4">
+        <strong>Emergency: Dial 9-1-1</strong><br>
+        Duty phone: <a href="tel:2087605827">208-760-5827</a><br>
+        Email: <a href="mailto:info@clearcreekvfd.com">info@clearcreekvfd.com</a>
+      </div>
+    </div>
+    <hr class="border-secondary">
+    <p class="small mb-0">&copy; <span data-current-year></span> Clear Creek Volunteer Fire Department. Community information is provided as a public service; emergency instructions from responding agencies always take priority.</p>
+  </div>
+</footer>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("[data-current-year]").forEach(function (el) {
+    el.textContent = new Date().getFullYear();
+  });
+
+  document.querySelectorAll(".accordion-button").forEach(function (button) {
+    var targetSelector = button.getAttribute("data-bs-target");
+    if (!targetSelector) return;
+    var target = document.querySelector(targetSelector);
+    if (!target) return;
+
+    button.setAttribute("aria-expanded", target.classList.contains("show") ? "true" : "false");
+
+    button.addEventListener("click", function () {
+      var parentSelector = target.getAttribute("data-bs-parent");
+      if (parentSelector) {
+        var parent = document.querySelector(parentSelector);
+        if (parent) {
+          parent.querySelectorAll(".accordion-collapse.show").forEach(function (openPanel) {
+            if (openPanel !== target) {
+              openPanel.classList.remove("show");
+              var id = openPanel.getAttribute("id");
+              var opener = parent.querySelector('.accordion-button[data-bs-target="#' + id + '"]');
+              if (opener) opener.setAttribute("aria-expanded", "false");
+            }
+          });
+        }
+      }
+
+      var willOpen = !target.classList.contains("show");
+      target.classList.toggle("show", willOpen);
+      button.setAttribute("aria-expanded", willOpen ? "true" : "false");
+    });
+  });
+
+  function openModal(modal) {
+    if (!modal) return;
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+  }
+
+  document.querySelectorAll('[data-bs-toggle="modal"]').forEach(function (trigger) {
+    trigger.addEventListener("click", function () {
+      var selector = trigger.getAttribute("data-bs-target");
+      openModal(document.querySelector(selector));
+    });
+  });
+
+  document.querySelectorAll(".modal").forEach(function (modal) {
+    modal.setAttribute("aria-hidden", "true");
+
+    modal.querySelectorAll('[data-bs-dismiss="modal"]').forEach(function (closeButton) {
+      closeButton.addEventListener("click", function () {
+        closeModal(modal);
+      });
+    });
+
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) closeModal(modal);
+    });
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      document.querySelectorAll(".modal.show").forEach(closeModal);
+    }
+  });
+});
+
+</script>
+</body>
+</html>
