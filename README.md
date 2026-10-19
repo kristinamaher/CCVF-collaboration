@@ -2,7 +2,7 @@
 
 Clear Creek Volunteer Fire Department's website provides department information, news, events, safety resources, and ways to volunteer or contribute.
 
-This review covers the eight HTML files in `CCVFD-client ver/CCVFD/Source Code (Legacy)` as of October 18, 2026. It describes the source code only.
+This review covers the eight HTML files in `CCVFD-client ver/CCVFD/Source Code (Legacy)` as of October 18, 2026. 
 
 ## What each file does
 
@@ -11,7 +11,7 @@ This review covers the eight HTML files in `CCVFD-client ver/CCVFD/Source Code (
 | `index.html` | Homepage: department introduction, featured news, safety reminders, emergency contact information, and links to news, events, membership, and donations. |
 | `about.html` | Department background, mission, services, coverage area, and 13 expandable FAQs about volunteering, stations, funding, and response. |
 | `community.html` | Membership benefits, parcel-based dues, mailing instructions, and an embedded Google Form for volunteer interest. |
-| `contact.html` | Department contact details and website feedback email. Three popup windows contain Google Forms for general contact, community directory opt-in, and newsletter/report signup. It collects directory opt-ins; it does not display a directory. |
+| `contact.html` | Department contact details and website feedback email. Three popup windows contain Google Forms for general contact, community directory opt-in, and newsletter/report signup.|
 | `donate.html` | Explains ways to support the department. Links to membership information and an email contact for donations/fundraiser support; no online checkout is implemented. |
 | `events.html` | Manually written event announcements, a recent fundraiser recap, and an embedded Google Calendar combining two calendars in agenda view. |
 | `news.html` | Full news articles, safety updates, and an archive. Article IDs let homepage buttons link directly to individual stories. |
