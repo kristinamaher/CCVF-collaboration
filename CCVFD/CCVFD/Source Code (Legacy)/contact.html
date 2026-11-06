@@ -303,19 +303,31 @@ ul, ol { margin-top: 0; margin-bottom: 1rem; }
 .accordion-body { padding: 1rem 1.1rem; background: #fff; }
 
 /* Modal */
-.modal {
-  display: none;
+dialog.modal {
   position: fixed;
   inset: 0;
-  z-index: 1050;
-  overflow: auto;
-  background: rgba(0,0,0,.55);
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  border: 0;
   padding: 1rem;
+  overflow: auto;
+  box-sizing: border-box;
+  background: rgba(0,0,0,.55);
+  color: var(--text);
 }
-.modal.show {
+dialog.modal:not([open]) {
+  display: none;
+}
+dialog.modal[open] {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+dialog.modal::backdrop {
+  background: transparent;
 }
 .modal-dialog { width: min(100%, 760px); margin: auto; }
 .modal-content {
@@ -368,6 +380,7 @@ body.modal-open { overflow: hidden; }
   <!--This div section is for the notification at the top-->
   <strong>Fall fire-safety reminder:</strong> Boise County's county closed season remains in effect through October 20. State/federal Stage 1 restrictions in the Boise Fire Restriction Area were lifted September 3, but the county seasonal ban remains a separate requirement.
 </div>
+
 <main class="container py-5">
   <header class="mb-5">
     <h1 class="section-title display-5">Contact CCVFD</h1>
@@ -405,32 +418,144 @@ body.modal-open { overflow: hidden; }
 
   <section class="row g-4">
     <div class="col-lg-4">
-      <div class="card h-100"><div class="card-body text-center p-4"><h2 class="h5">Contact Form</h2><p>Comments, questions, concerns, suggestions, or kudos?</p><button class="btn btn-ccvfd" data-bs-toggle="modal" data-bs-target="#contactModal">Open Contact Form</button></div></div>
+      <div class="card h-100">
+        <div class="card-body text-center p-4">
+          <h2 class="h5">Contact Form</h2>
+          <p>Comments, questions, concerns, suggestions, or kudos?</p>
+          <button
+            type="button"
+            class="btn btn-ccvfd"
+            data-bs-toggle="modal"
+            data-bs-target="#contactModal"
+          >Open Contact Form</button>
+        </div>
+      </div>
     </div>
+
     <div class="col-lg-4">
-      <div class="card h-100"><div class="card-body text-center p-4"><h2 class="h5">Directory Opt-In</h2><p>Choose what information you would like included in the public community directory.</p><button class="btn btn-ccvfd" data-bs-toggle="modal" data-bs-target="#directoryModal">Open Directory Form</button></div></div>
+      <div class="card h-100">
+        <div class="card-body text-center p-4">
+          <h2 class="h5">Directory Opt-In</h2>
+          <p>Choose what information you would like included in the public community directory.</p>
+          <button
+            type="button"
+            class="btn btn-ccvfd"
+            data-bs-toggle="modal"
+            data-bs-target="#directoryModal"
+          >Open Directory Form</button>
+        </div>
+      </div>
     </div>
+
     <div class="col-lg-4">
-      <div class="card h-100"><div class="card-body text-center p-4"><h2 class="h5">Newsletter &amp; Reports</h2><p>Sign up for the CCVFD communications you want to receive.</p><button class="btn btn-ccvfd" data-bs-toggle="modal" data-bs-target="#newsletterModal">Open Signup Form</button></div></div>
+      <div class="card h-100">
+        <div class="card-body text-center p-4">
+          <h2 class="h5">Newsletter &amp; Reports</h2>
+          <p>Sign up for the CCVFD communications you want to receive.</p>
+          <button
+            type="button"
+            class="btn btn-ccvfd"
+            data-bs-toggle="modal"
+            data-bs-target="#newsletterModal"
+          >Open Signup Form</button>
+        </div>
+      </div>
     </div>
   </section>
 
   <!--Contact Google Form-->
-  <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title h5">Contact Form</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><iframe class="form-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSdHPLv_Ac89znDw82ofXbjY-Oyukx-B6gtzRpr1gtrAllrSfg/viewform?embedded=true" title="CCVFD Contact Form">Loading…</iframe></div></div></div>
-  </div>
+  <dialog
+    class="modal fade"
+    id="contactModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="contactModalTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="contactModalTitle">Contact Form</h2>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <iframe
+            class="form-frame"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdHPLv_Ac89znDw82ofXbjY-Oyukx-B6gtzRpr1gtrAllrSfg/viewform?embedded=true"
+            title="CCVFD Contact Form"
+          >Loading…</iframe>
+        </div>
+      </div>
+    </div>
+  </dialog>
 
   <!--Directory Google Form-->
-  <div class="modal fade" id="directoryModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title h5">Directory Opt-In</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><iframe class="form-frame" src="https://docs.google.com/forms/d/e/1FAIpQLScb5fah7NugBVxJddALdxXp4RyfAoW0HsuCECUwyPunTt6vqg/viewform?embedded=true" title="CCVFD Community Directory Opt-In Form">Loading…</iframe></div></div></div>
-  </div>
+  <dialog
+    class="modal fade"
+    id="directoryModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="directoryModalTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="directoryModalTitle">Directory Opt-In</h2>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <iframe
+            class="form-frame"
+            src="https://docs.google.com/forms/d/e/1FAIpQLScb5fah7NugBVxJddALdxXp4RyfAoW0HsuCECUwyPunTt6vqg/viewform?embedded=true"
+            title="CCVFD Community Directory Opt-In Form"
+          >Loading…</iframe>
+        </div>
+      </div>
+    </div>
+  </dialog>
 
   <!--Newsletter Google Form-->
-  <div class="modal fade" id="newsletterModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title h5">Newsletter &amp; Reports Signup</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><iframe class="form-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSeHMmfVmu_Bneje3qUpTYZ58MDnhi1Yf5C7O-6akJY2q35OMQ/viewform?embedded=true" title="CCVFD Newsletter and Reports Signup Form">Loading…</iframe></div></div></div>
-  </div>
+  <dialog
+    class="modal fade"
+    id="newsletterModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="newsletterModalTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="newsletterModalTitle">Newsletter &amp; Reports Signup</h2>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <iframe
+            class="form-frame"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeHMmfVmu_Bneje3qUpTYZ58MDnhi1Yf5C7O-6akJY2q35OMQ/viewform?embedded=true"
+            title="CCVFD Newsletter and Reports Signup Form"
+          >Loading…</iframe>
+        </div>
+      </div>
+    </div>
+  </dialog>
 </main>
-
 
 <footer class="footer mt-5 py-4">
   <div class="container">
@@ -460,24 +585,38 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".accordion-button").forEach(function (button) {
     var targetSelector = button.getAttribute("data-bs-target");
     if (!targetSelector) return;
+
     var target = document.querySelector(targetSelector);
     if (!target) return;
 
-    button.setAttribute("aria-expanded", target.classList.contains("show") ? "true" : "false");
+    button.setAttribute(
+      "aria-expanded",
+      target.classList.contains("show") ? "true" : "false"
+    );
 
     button.addEventListener("click", function () {
       var parentSelector = target.getAttribute("data-bs-parent");
+
       if (parentSelector) {
         var parent = document.querySelector(parentSelector);
+
         if (parent) {
-          parent.querySelectorAll(".accordion-collapse.show").forEach(function (openPanel) {
-            if (openPanel !== target) {
-              openPanel.classList.remove("show");
-              var id = openPanel.getAttribute("id");
-              var opener = parent.querySelector('.accordion-button[data-bs-target="#' + id + '"]');
-              if (opener) opener.setAttribute("aria-expanded", "false");
+          parent.querySelectorAll(".accordion-collapse.show").forEach(
+            function (openPanel) {
+              if (openPanel !== target) {
+                openPanel.classList.remove("show");
+
+                var id = openPanel.getAttribute("id");
+                var opener = parent.querySelector(
+                  '.accordion-button[data-bs-target="#' + id + '"]'
+                );
+
+                if (opener) {
+                  opener.setAttribute("aria-expanded", "false");
+                }
+              }
             }
-          });
+          );
         }
       }
 
@@ -487,45 +626,82 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  function openModal(modal) {
-    if (!modal) return;
-    modal.classList.add("show");
+  const modalOpeners = new WeakMap();
+
+  function openModal(modal, trigger) {
+    if (!modal || modal.open) return;
+
+    modalOpeners.set(modal, trigger);
     modal.setAttribute("aria-hidden", "false");
+
+    modal.showModal();
     document.body.classList.add("modal-open");
+
+    const closeButton = modal.querySelector(
+      '[data-bs-dismiss="modal"]'
+    );
+
+    if (closeButton) {
+      closeButton.focus();
+    }
   }
 
   function closeModal(modal) {
-    if (!modal) return;
-    modal.classList.remove("show");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
+    if (modal && modal.open) {
+      modal.close();
+    }
   }
 
-  document.querySelectorAll('[data-bs-toggle="modal"]').forEach(function (trigger) {
-    trigger.addEventListener("click", function () {
-      var selector = trigger.getAttribute("data-bs-target");
-      openModal(document.querySelector(selector));
-    });
-  });
+  document.querySelectorAll('[data-bs-toggle="modal"]').forEach(
+    function (trigger) {
+      trigger.addEventListener("click", function (event) {
+        event.preventDefault();
 
-  document.querySelectorAll(".modal").forEach(function (modal) {
+        const selector = trigger.getAttribute("data-bs-target");
+        const modal = document.querySelector(selector);
+
+        openModal(modal, trigger);
+      });
+    }
+  );
+
+  document.querySelectorAll("dialog.modal").forEach(function (modal) {
     modal.setAttribute("aria-hidden", "true");
 
-    modal.querySelectorAll('[data-bs-dismiss="modal"]').forEach(function (closeButton) {
-      closeButton.addEventListener("click", function () {
-        closeModal(modal);
-      });
-    });
+    modal.querySelectorAll('[data-bs-dismiss="modal"]').forEach(
+      function (closeButton) {
+        closeButton.addEventListener("click", function () {
+          closeModal(modal);
+        });
+      }
+    );
 
     modal.addEventListener("click", function (event) {
-      if (event.target === modal) closeModal(modal);
+      if (event.target === modal) {
+        closeModal(modal);
+      }
     });
-  });
 
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      document.querySelectorAll(".modal.show").forEach(closeModal);
-    }
+    modal.addEventListener("close", function () {
+      modal.setAttribute("aria-hidden", "true");
+
+      const anotherModalIsOpen = document.querySelector(
+        "dialog.modal[open]"
+      );
+
+      document.body.classList.toggle(
+        "modal-open",
+        Boolean(anotherModalIsOpen)
+      );
+
+      const trigger = modalOpeners.get(modal);
+
+      if (trigger && trigger.isConnected) {
+        trigger.focus();
+      }
+
+      modalOpeners.delete(modal);
+    });
   });
 });
 
